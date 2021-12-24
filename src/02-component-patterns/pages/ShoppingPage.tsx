@@ -3,6 +3,8 @@
 // import { ProductImage } from '../components/ProductImage';
 // import { ProductTitle } from '../components/ProductTitle';
 import {ProductButtons, ProductCard, ProductImage, ProductTitle} from '../components'
+import '../styles/custom-styles.css'
+
 
 const product = {
     id: '1',
@@ -39,9 +41,11 @@ export const ShoppingPage = () => {
                 flexWrap: 'wrap'
             }}>
                 {/**Primera Version */}
-                <ProductCard product={product}>
-                    <ProductCard.Image />
-                    <ProductCard.Title title="Cafe (Primera version)" />
+                <ProductCard 
+                    product={product}
+                >
+                    <ProductCard.Image className="custom-img" />
+                    <ProductCard.Title title="Cafe (Primera version)" className="text-bold" />
                     <ProductCard.Buttons  />
                 </ProductCard> 
 
@@ -57,13 +61,28 @@ export const ShoppingPage = () => {
                     ))
                 }
 
-                {/* 
-                <ProductCard product={product}>
-                    <ProductImage />
-                    <ProductTitle title="Cafe" />
-                    <ProductButtons  />
+               
+                <ProductCard 
+                    product={product}
+                    className='bg-dark'
+                >
+                    <ProductImage className="custom-img" style={{boxShadow: '10px 10px 10px rgba(0,0,0,0.2)'}} />
+                    <ProductTitle title="Cafe" className="text-white text-bold" />
+                    <ProductButtons className="custom-buttons"  />
                 </ProductCard>
-                */}
+
+                <ProductCard 
+                    product={product}
+                    style={{backgroundColor: "#70D1F8"}}
+                >
+                    <ProductImage style={{boxShadow: '10px 10px 10px rgba(0,0,0,0.2)'}} />
+                    <ProductTitle title="Cafe ole" style={{fontSize: '22', fontWeight: 'bold'}} />
+                    <ProductButtons style={{
+                        display: 'flex',
+                        justifyContent: 'end'
+                    }} />
+                </ProductCard>
+                
 
             </div>
             
